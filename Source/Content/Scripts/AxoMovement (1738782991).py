@@ -1,4 +1,4 @@
-import cave
+import cave # type: ignore
 
 class AxoMovement(cave.Component):
 	
@@ -13,13 +13,16 @@ class AxoMovement(cave.Component):
 
 		if is_ground_colliding:
 			character.jump()
+			character.gravity = 10.0
 		
 		elif is_water_colliding:
 			cave.restartCurrentScene()
 		
 		elif is_speed_ground_colliding:
 			character.jumpSpeed += 10.0
+			character.gravity = 5.0
 			character.jump()
+			cave.playSound("Weee.ogg", 2.0)
 		else: 
 			character.jumpSpeed = 10.0
 
