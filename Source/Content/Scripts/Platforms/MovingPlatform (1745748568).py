@@ -6,7 +6,7 @@ class MovingPlatform(cave.Component):
 
 	def update(self):
 		goingRight : bool = False
-		_rb : cave.RigidBodyComponent = self.entity.get("Dynamic Body")
+		_rb : cave.RigidBodyComponent = self.entity.get("Rigid Body")
 
 		if self.timer.get() > 3.0:
 			self.timer.reset()
